@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e8adaa">
+  <meta name="description" content="KAROL SKIN: descubre productos de limpieza y cuidado facial, maquillaje líquido y maquillaje en polvo.">
+  <title>KAROL SKIN | Descubre tu belleza</title>
+  <link rel="stylesheet" href="master.css">
+  <link rel="stylesheet" href="reset.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <section class="design" aria-label="Presentación de KAROL SKIN">
+      <div class="background-texture" aria-hidden="true"></div>
+
+      <header class="hero" aria-label="Presentación de la marca">
+        <p class="brand-message">se siempre tu<br>mejor vercion</p>
+
+        <img class="brand-logo" src="imagenes/logo.png" alt="Logotipo de KAROL SKIN">
+
+        <img class="hero-products" src="imagenes/encabezado_2.png" alt="Productos de belleza en tonos rosados">
+        <img class="hero-model" src="imagenes/imagen encabezado.png" alt="Inspiración de maquillaje y cuidado facial">
+
+        <button class="discover-button" id="discoverButton" type="button">
+          Descubre tu<br>belleza
+        </button>
+      </header>
+
+      <section class="products-panel" id="productsPanel" aria-label="Categorías de productos">
+        <div class="product-grid">
+          <button class="product-card" type="button" data-category="limpieza" aria-haspopup="dialog">
+            <img src="imagenes/cuidado facial.png" alt="Productos para limpiar y cuidar el rostro">
+            <span>productos de<br>limpieza y<br>cuidado</span>
+          </button>
+
+          <button class="product-card" type="button" data-category="liquido" aria-haspopup="dialog">
+            <img src="imagenes/maquillage liquido.png" alt="Maquillaje líquido en envases rosados">
+            <span>productos de<br>maquillaje<br>liquido</span>
+          </button>
+
+          <button class="product-card" type="button" data-category="polvo" aria-haspopup="dialog">
+            <img src="imagenes/maquillage en polvo.png" alt="Productos de maquillaje en polvo">
+            <span>productos de<br>maquillaje<br>en polvo</span>
+          </button>
+        </div>
+      </section>
+
+      <button class="whatsapp-button" id="whatsappButton" type="button" aria-label="Contactar por WhatsApp">
+        <span class="whatsapp-icon" aria-hidden="true">✆</span>
+        <span>WhatsApp</span>
+      </button>
+    </section>
+  </main>
+
+  <dialog class="product-dialog" id="productDialog" aria-labelledby="dialogTitle">
+    <button class="dialog-close" id="dialogClose" type="button" aria-label="Cerrar ventana">×</button>
+    <p class="dialog-eyebrow">KAROL SKIN</p>
+    <h2 id="dialogTitle">Descubre tu belleza</h2>
+    <p id="dialogDescription">Explora nuestras categorías de belleza.</p>
+    <button class="dialog-ok" id="dialogOk" type="button">Entendido</button>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
