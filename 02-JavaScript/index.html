@@ -6,85 +6,256 @@
     <title>02-JavaScript</title>
     <link rel="stylesheet" href="../src/css/master.css">
     <style>
-        body{
-            menu > a:hover { transform: translateY(-3px); background-color: #d2d60479; border-color: #ffffff66; }
+        /* --- ESTILOS GENERALES Y FONDO ROSA --- */
+        body.mainmenu {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffe4e1 0%, #ffc0cb 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-top: 50px; /* Espacio extra arriba para que no choque con el botón inicio */
+        }
+
+        /* --- BOTÓN DE VOLVER (ESQUINA IZQUIERDA) --- */
+        .back-link {
+            position: fixed; /* Lo fija en la pantalla */
+            top: 20px;
+            left: 20px;
+            z-index: 1000; /* Asegura que esté por encima de todo */
+            text-decoration: none;
+            color: #d81b60;
+            font-weight: bold;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(216, 27, 96, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            background-color: #ff80ab;
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        /* --- ENCABEZADO (HEADER) --- */
+        header {
+            background-color: #ffffff;
+            border-radius: 25px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.3);
+            border: 2px solid #ffb6c1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header img {
+            margin: 15px 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Diferentes tonalidades de rosa para los títulos */
+        header h1 {
+            color: #c2185b;
+            margin: 10px 0;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+        header h2 {
+            color: #d81b60;
+            margin: 5px 0;
+            font-size: 1.5rem;
+        }
+        header h3 {
+            color: #e91e63;
+            margin: 5px 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        header h4 {
+            color: #f06292;
+            margin: 5px 0;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        header h5 {
+            color: #f48fb1;
+            margin: 5px 0;
+            font-size: 0.9rem;
+            font-weight: 400;
+            text-transform: uppercase;
+        }
+
+        /* --- MENÚ DE TARJETAS --- */
+        menu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+        }
+
+        menu > a {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 20px;
+            border: 2px solid #f8bbd0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            gap: 20px;
+            
+            /* AQUÍ ASEGURAMOS QUE TODOS MIDAN LO MISMO */
+            width: 100%;
+            box-sizing: border-box;
+            min-height: 80px; 
+        }
+
+        /* Efecto al pasar el ratón por las tarjetas */
+        menu > a:hover {
+            transform: translateY(-5px) scale(1.02);
+            background: linear-gradient(135deg, #ff80ab, #ff4081);
+            border-color: #ff4081;
+            box-shadow: 0 10px 25px rgba(255, 64, 129, 0.4);
+        }
+
+        /* El número de la tarjeta */
+        menu > a span {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #f48fb1;
+            transition: color 0.3s ease;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        /* El texto de la tarjeta */
+        menu > a aside {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        menu > a aside h3 {
+            margin: 0;
+            color: #c2185b;
+            font-size: 1.3rem;
+            transition: color 0.3s ease;
+        }
+
+        menu > a aside small {
+            color: #757575;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        /* Cuando pasas el ratón, el texto se vuelve blanco */
+        menu > a:hover span,
+        menu > a:hover aside h3,
+        menu > a:hover aside small {
+            color: #ffffff;
         }
 
     </style>
 </head>
-<body class="mainmenu layout-menu">
-   <main>
+<body class="mainmenu">
     
-    <header>
-        <a class="back-link" href="../index.html" aria-label="Volver al inicio">← Inicio</a>
-        <h1>ADSO 3410390</h1>
-        <img src="../src/img/R.svg" width="300" alt="Imagen de perfil">
-        <h2>02-JavaScript</h2>
-        <h3>Análisis y desarrollo de software</h3>
-        <h4>Centro de Procesos Industriales</h4>
-        <h5>SENA Regional Caldas</h5>
+    <!-- El botón de inicio ahora está fuera del header para fijarse en la esquina -->
+    <a class="back-link" href="../index.html" aria-label="Volver al inicio">← Inicio</a>
 
-    </header>
-    <menu>
+    <main>
+        <header>
+            <img src="imgs/logo-js.png" width="200" alt="Imagen de perfil">
+            <h1>ADSO 3410390</h1>
+            <h2>02-JavaScript</h2>
+            <h3>Análisis y desarrollo de software</h3>
+            <h4>Centro de Procesos Industriales</h4>
+            <h5>SENA Regional Caldas</h5>
+        </header>
 
-<a href="1-events.html">
-            <span>01</span>
-            <aside>
-                <h3>Events</h3>
-                <small>Maneja interacciones de usuario con escuchadores de eventos.</small>
-            </aside>
+        <!-- Menú corregido: Todas las etiquetas <a> abren y cierran correctamente -->
+        <menu>
+            <a href="1-events.html">
+                <span>01</span>
+                <aside>
+                    <h3>Events</h3>
+                    <small>Maneja interacciones de usuario con escuchadores de eventos.</small>
+                </aside>
+            </a>
 
-    <a href="2-methods-mathematics.html">
-            <span>02</span>
-            <aside>
-                <h3>methods-mathematics</h3>
-                <small>Usa métodos matemáticos para cálculos avanzados</small>
-            </aside>
+            <a href="2-methods-mathematics.html">
+                <span>02</span>
+                <aside>
+                    <h3>methods-mathematics</h3>
+                    <small>Usa métodos matemáticos para cálculos avanzados.</small>
+                </aside>
+            </a>
 
             <a href="3-methods-arrays.html">
-            <span>03</span>
-            <aside>
-                <h3>methods-arrays</h3>
-                <small> Manipula arreglos usando métodos de arreglos.</small>
-            </aside>
+                <span>03</span>
+                <aside>
+                    <h3>methods-arrays</h3>
+                    <small>Manipula arreglos usando métodos de arreglos.</small>
+                </aside>
+            </a>
 
             <a href="4-events-time.html">
-            <span>04</span>
-            <aside>
-                <h3>events-time</h3>
-                <small> Maneja eventos y intervalos basados en tiempo.</small>
-            </aside>
+                <span>04</span>
+                <aside>
+                    <h3>events-time</h3>
+                    <small>Maneja eventos e intervalos basados en tiempo.</small>
+                </aside>
+            </a>
 
             <a href="5-localstorage.html">
-            <span>05</span>
-            <aside>
-                <h3>localstorage</h3>
-                <small> Almacena datos localmente en el navegador usando localStorage.</small>
-            </aside>
+                <span>05</span>
+                <aside>
+                    <h3>localstorage</h3>
+                    <small>Almacena datos localmente en el navegador usando localStorage.</small>
+                </aside>
+            </a>
 
             <a href="6-json-data.html">
-            <span>06</span>
-            <aside>
-                <h3>json-data</h3>
-                <small> Formato de texto para intercambio de datos, fácil de usar.</small>
-            </aside>
+                <span>06</span>
+                <aside>
+                    <h3>json-data</h3>
+                    <small>Formato de texto para intercambio de datos, fácil de usar.</small>
+                </aside>
+            </a>
 
             <a href="7-onenterframe.html">
-            <span>07</span>
-            <aside>
-                <h3>on enter frame</h3>
-                <small> Ejecuta código en cada fotograma para animaciones.</small>
-            </aside>
+                <span>07</span>
+                <aside>
+                    <h3>on enter frame</h3>
+                    <small>Ejecuta código en cada fotograma para animaciones.</small>
+                </aside>
+            </a>
 
             <a href="8-objects.html">
-            <span>08</span>
-            <aside>
-                <h3>Objects</h3>
-                <small> Crea y manipula un objeto vehículo con propiedades.</small>
-            </aside>
-
-</menu>
-
-</main>
+                <span>08</span>
+                <aside>
+                    <h3>Objects</h3>
+                    <small>Crea y manipula un objeto vehículo con propiedades.</small>
+                </aside>
+            </a>
+        </menu>
+    </main>
 </body>
 </html>
